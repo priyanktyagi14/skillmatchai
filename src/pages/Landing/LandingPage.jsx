@@ -20,9 +20,11 @@ import {
 import { Button } from '../../components/common/Button';
 import { Card } from '../../components/common/Card';
 import { Badge } from '../../components/common/Badge';
+import { useApp } from '../../context/AppContext';
 
 export const LandingPage = () => {
   const navigate = useNavigate();
+  const { isRegistered } = useApp();
 
   // FAQ open/close state
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -136,9 +138,9 @@ export const LandingPage = () => {
               variant="primary"
               size="sm"
               iconRight={ArrowRight}
-              onClick={() => navigate('/register')}
+              onClick={() => navigate(isRegistered ? '/' : '/register')}
             >
-              Start onboarding
+              {isRegistered ? 'Open Dashboard' : 'Start Onboarding'}
             </Button>
           </div>
         </nav>
@@ -171,10 +173,10 @@ export const LandingPage = () => {
               variant="primary"
               size="lg"
               iconRight={ArrowRight}
-              onClick={() => navigate('/register')}
+              onClick={() => navigate(isRegistered ? '/' : '/register')}
               className="shadow-md"
             >
-              Start profile onboarding
+              {isRegistered ? 'Open Career Dashboard' : 'Start Profile Onboarding'}
             </Button>
             <Button
               variant="outline"
@@ -566,10 +568,10 @@ export const LandingPage = () => {
               variant="primary"
               size="lg"
               iconRight={ArrowRight}
-              onClick={() => navigate('/register')}
+              onClick={() => navigate(isRegistered ? '/' : '/register')}
               className="shadow-md"
             >
-              Start profile onboarding
+              {isRegistered ? 'Return to Dashboard' : 'Start Profile Onboarding'}
             </Button>
           </div>
 

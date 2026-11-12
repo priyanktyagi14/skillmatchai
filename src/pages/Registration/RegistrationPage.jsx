@@ -457,10 +457,10 @@ export const RegistrationPage = () => {
           <div className="flex items-center gap-3">
             <button
               type="button"
-              onClick={() => navigate('/landing')}
-              className="text-xs font-semibold text-slate-500 hover:text-indigo-600 transition-colors"
+              onClick={() => navigate('/')}
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-indigo-600 transition-colors"
             >
-              Product Tour
+              <ArrowLeft className="w-3.5 h-3.5" /> Product Tour
             </button>
             <span className="text-xs font-semibold text-slate-500 hidden sm:inline">
               Step {currentStep} of {STEPS.length}
@@ -539,6 +539,21 @@ export const RegistrationPage = () => {
         {/* ======================================================== */}
         {currentStep === 1 && (
           <Card className="p-6 sm:p-8 space-y-6 bg-white border-slate-200/90 shadow-sm">
+            {/* Professional Guided Onboarding Banner */}
+            <div className="p-4 rounded-xl bg-indigo-50/70 border border-indigo-100 flex items-start gap-3">
+              <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-xs">
+                <Sparkles className="w-4 h-4 fill-white/20" />
+              </div>
+              <div className="text-xs text-indigo-950 space-y-0.5">
+                <p className="font-bold text-indigo-900 text-sm">
+                  SkillMatch AI Guided Onboarding
+                </p>
+                <p className="text-indigo-700 leading-relaxed">
+                  Complete these 5 quick steps to configure your technical skill taxonomy, calibrate baseline job compatibility, and tailor your personal ATS resume builder. Zero passwords required.
+                </p>
+              </div>
+            </div>
+
             <div className="border-b border-slate-100 pb-4">
               <div className="flex items-center gap-2 text-indigo-600 mb-1">
                 <User className="w-5 h-5" />
